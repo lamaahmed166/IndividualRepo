@@ -130,5 +130,16 @@ k)  lama@Tag:~/Desktop/MyTask_sp0$ git checkout master
    1 file changed, 33 insertions(+)
    create mode 100644 README.md.txt
 
-l)
+l)   lama@Tag:~/Desktop/MyTask_sp0$ git add AllMyCommands.txt
+    
+    lama@Tag:~/Desktop/MyTask_sp0$ git commit -m "Added AllMyCommands.txt file"
+     [master 96d48b6] Added AllMyCommands.txt file
+     1 file changed, 134 insertions(+)
+     create mode 100644 AllMyCommands.txt
+   
+     lama@Tag:~/Desktop/MyTask_sp0$ git status
+     On branch master
+     Your branch is ahead of 'Repo1/master' by 2 commits.
+    (use "git push" to publish your local commits)
+
 
