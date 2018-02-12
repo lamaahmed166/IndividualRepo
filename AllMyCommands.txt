@@ -1,0 +1,134 @@
+lama@Tag:~$ pwd
+/home/lama
+lama@Tag:~$ cd Desktop
+lama@Tag:~/Desktop$ ls
+AllMyCommands.txt  git-dest  individual_task  MyTask_sp0
+
+
+a) lama@Tag:~/Desktop$ cd MyTask_sp0
+
+lama@Tag:~/Desktop/MyTask_sp0$ git init
+Initialized empty Git repository in /home/lama/Desktop/MyTask_sp0/.git/
+
+b) lama@Tag:~/Desktop/MyTask_sp0$ git add .
+
+  lama@Tag:~/Desktop/MyTask_sp0$ git commit -m "My first commit, adding the 3 files"
+  [master (root-commit) 85178db] My first commit, adding the 3 files
+  3 files changed, 133 insertions(+)
+  create mode 100644 Section1.1.txt
+  create mode 100644 Section3.1.txt
+  create mode 100644 Section5.1.txt
+
+  lama@Tag:~/Desktop/MyTask_sp0$ git log
+  commit 85178dbd4e008e3978ded2e1136e540a9bc31b3a (HEAD -> master)
+  Author: lamaahmed166 <lamaahmed166@gmail.com>
+  Date:   Mon Feb 12 21:33:15 2018 +0200
+
+    My first commit, adding the 3 files
+
+c)   lama@Tag:~/Desktop/MyTask_sp0$ git rm Section3.1.txt
+    rm 'Section3.1.txt'
+
+   lama@Tag:~/Desktop/MyTask_sp0$ git commit -m "deleted the section 3.1 (Branches) file"
+   [master 1e642ab] deleted the section 3.1 (Branches) file
+   1 file changed, 74 deletions(-)
+   delete mode 100644 Section3.1.txt
+
+  lama@Tag:~/Desktop/MyTask_sp0$ git status
+  On branch master
+  nothing to commit, working tree clean
+
+d)  lama@Tag:~/Desktop/MyTask_sp0$ git log --diff-filter=D --summary
+  commit 1e642abdca902ee23a5ce8fa7f9c0989a900e24c (HEAD -> master)
+  Author: lamaahmed166 <lamaahmed166@gmail.com>
+  Date:   Mon Feb 12 21:34:25 2018 +0200
+
+    deleted the section 3.1 (Branches) file
+
+   delete mode 100644 Section3.1.txt
+
+  lama@Tag:~/Desktop/MyTask_sp0$ git checkout HEAD~ Section3.1.txt
+
+  lama@Tag:~/Desktop/MyTask_sp0$ git status
+  On branch master
+  Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   Section3.1.txt
+
+   lama@Tag:~/Desktop/MyTask_sp0$ git add .
+
+e) lama@Tag:~/Desktop/MyTask_sp0$ git commit -m "retored deleted file back"
+   [master feb3d21] retored deleted file back
+   1 file changed, 74 insertions(+)
+   create mode 100644 Section3.1.txt
+
+   lama@Tag:~/Desktop/MyTask_sp0$ git status
+   On branch master
+   nothing to commit, working tree clean
+
+
+ lama@Tag:~/Desktop/MyTask_sp0$ git remote add Repo1 https://github.com/lamaahmed166/    IndividualRepo.git
+
+   lama@Tag:~/Desktop/MyTask_sp0$ git remote
+   Repo
+
+f) lama@Tag:~/Desktop/MyTask_sp0$ git push -u Repo1 master
+   Username for 'https://github.com': lamaahmed166
+   Password for 'https://lamaahmed166@github.com': 
+   Counting objects: 8, done.
+   Delta compression using up to 4 threads.
+   Compressing objects: 100% (8/8), done.
+   Writing objects: 100% (8/8), 8.27 KiB | 4.13 MiB/s, done.
+   Total 8 (delta 2), reused 0 (delta 0)
+   remote: Resolving deltas: 100% (2/2), done.
+   To https://github.com/lamaahmed166/IndividualRepo.git
+   * [new branch]      master -> master
+  Branch 'master' set up to track remote branch 'master' from 'Repo1'.
+
+g) 
+
+
+
+h)  lama@Tag:~/Desktop/MyTask_sp0$ git branch
+    * master
+    
+    lama@Tag:~/Desktop/MyTask_sp0$ git branch ReadMe 
+    
+    lama@Tag:~/Desktop/MyTask_sp0$ git branch
+    ReadMe
+    * master
+
+    lama@Tag:~/Desktop/MyTask_sp0$ git checkout ReadMe
+    Switched to branch 'ReadMe'
+  
+    lama@Tag:~/Desktop/MyTask_sp0$ git branch
+    * ReadMe
+    master
+
+i)  lama@Tag:~/Desktop/MyTask_sp0$ git add .
+
+j)  lama@Tag:~/Desktop/MyTask_sp0$ git commit -m "Created the branch ReadMe and adding the README.md file to it"
+   [ReadMe 4ebc7d0] Created the branch ReadMe and adding the README.md file to it
+    1 file changed, 33 insertions(+)
+    create mode 100644 README.md.txt
+
+   lama@Tag:~/Desktop/MyTask_sp0$ git status
+   On branch ReadMe
+   nothing to commit, working tree clean
+
+    
+
+k)  lama@Tag:~/Desktop/MyTask_sp0$ git checkout master
+   Switched to branch 'master'
+   Your branch is up to date with 'Repo1/master'.
+
+   lama@Tag:~/Desktop/MyTask_sp0$ git merge ReadMe
+   Updating feb3d21..4ebc7d0
+   Fast-forward
+   README.md.txt | 33 +++++++++++++++++++++++++++++++++
+   1 file changed, 33 insertions(+)
+   create mode 100644 README.md.txt
+
+l)
+
